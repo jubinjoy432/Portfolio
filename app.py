@@ -16,7 +16,7 @@ portfolio_data = {
             "company": "Deloitte USI",
             "role": "Associate Analyst, FinOps - Cash Application Team",
             "duration": "December 2023 - April 2025",
-            "logo": "deloitte_new.png",
+            "logo": "deloitte_updated.png",
             "description": [
                 "Processed cash applications and managed financial transactions using Oracle.",
                 "Supported FinOps operations, contributing to accurate financial data processing."

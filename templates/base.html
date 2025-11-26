@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ data.name }} - Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=5">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=6">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,6 +14,9 @@
     <nav class="navbar">
         <div class="logo">
             <a href="#">{{ data.name[0] }}</a>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -34,6 +37,29 @@
             <a href="{{ data.github }}" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const hamburgerIcon = hamburger.querySelector('i');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburgerIcon.classList.toggle('fa-bars');
+                hamburgerIcon.classList.toggle('fa-times');
+            });
+        }
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburgerIcon.classList.add('fa-bars');
+                hamburgerIcon.classList.remove('fa-times');
+            });
+        });
+    </script>
 </body>
 
 </html>
